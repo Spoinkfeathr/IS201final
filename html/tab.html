@@ -1,49 +1,28 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <title>Tableau</title>
-    </head>
-    <body>
-        <a href="scratch.html">Go to Scratch Page</a>
+<head>
+  <title>Tableau</title>
+</head>
+<body>
+  <a href="scratch.html">Go to Scratch Page</a>
+  <h1>Tableau Dashboard</h1>
 
-        <h1>Tableau Dashboard</h1>
+  
+  <div id="tableauViz" style="width:100%; max-width:1600px; margin:auto;"></div>
 
-       
-        <div class='tableauPlaceholder' 
-            id='viz1733810251430' 
-            style='position: relative; width: 100%; max-width: 1600px; margin: auto;'>
-        </div>
+  
+  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 
-      
-        <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-
-        <script type='text/javascript'>                    
-            function initViz() {
-                var containerDiv = document.getElementById('viz1733810251430');
-
-                
-                var url = "https://public.tableau.com/views/ShipmentDashboard_17631611894330/OVERVIEW?:showVizHome=no&:embed=true";
-
-                var options = {
-                    hideTabs: true,
-                    hideToolbar: false,
-                    width: containerDiv.offsetWidth,
-                    height: containerDiv.offsetWidth * 0.62
-                };
-
-                new tableau.Viz(containerDiv, url, options);
-            }
-
-            document.addEventListener("DOMContentLoaded", initViz);
-
-            window.addEventListener("resize", function () {
-                var container = document.getElementById("viz1733810251430");
-                container.innerHTML = "";
-                initViz();
-            });
-        </script>
-       
-
-    </body>
+  <script>
+    const container = document.getElementById("tableauViz");
+    const url = "https://public.tableau.com/views/ShipmentDashboard_17631611894330/OVERVIEW";
+    const options = {
+      hideTabs: true,
+      toolbar: "yes",
+      width: container.offsetWidth,
+      height: container.offsetWidth * 0.62
+    };
+    new tableau.Viz(container, url, options);
+  </script>
+</body>
 </html>
