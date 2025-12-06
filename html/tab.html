@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tableau</title>
+    <title>Tableau</title>
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
 </head>
 <body>
-  <a href="scratch.html">Go to Scratch Page</a>
-  <h1>Tableau Dashboard</h1>
+    <a href="scratch.html">Go to Scratch Page</a>
 
-  
-  <div id="tableauViz" style="width:100%; max-width:1600px; margin:auto;"></div>
+    <h1>Tableau Dashboard</h1>
 
-  
-  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <div id="tableauVizContainer" style="width:100%; height:1000px;"></div>
 
-  <script>
-    const container = document.getElementById("tableauViz");
-    const url = "https://public.tableau.com/views/ShipmentDashboard_17631611894330/OVERVIEW";
-    const options = {
-      hideTabs: true,
-      toolbar: "yes",
-      width: container.offsetWidth,
-      height: container.offsetWidth * 0.62
-    };
-    new tableau.Viz(container, url, options);
-  </script>
+    <script>
+        var containerDiv = document.getElementById("tableauVizContainer");
+
+        var url = "https://public.tableau.com/views/ZPDXRSJS8?:showVizHome=no";
+
+        var options = {
+            hideTabs: true,
+            width: containerDiv.offsetWidth,
+            height: containerDiv.offsetWidth * 0.8,
+        };
+
+        new tableau.Viz(containerDiv, url, options);
+    </script>
 </body>
 </html>
